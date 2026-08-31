@@ -29,7 +29,7 @@ Voir `project/Charte 7e3.dc.html` pour la charte complète (logo, motifs, règle
 ## À faire avant publication
 
 - Remplacer les photos de substitution (zones rayées) par de vraies photos de la classe.
-- Le formulaire de contact affiche une confirmation mais n'envoie rien : brancher un service d'envoi (ex. Formspree, une fonction serverless) ou passer par un `mailto:` si aucun backend n'est prévu.
+- Le formulaire de contact ouvre le logiciel de messagerie du visiteur via `mailto:` (pas d'envoi silencieux, pas de backend) : remplacer l'adresse `classe-7e3@yopmail.com` (`data-mailto` sur le `<form>` de `contact.html`) par la vraie adresse de la classe — `yopmail.com` est une adresse de démonstration, personne ne la relève.
 
 ## Origine
 
