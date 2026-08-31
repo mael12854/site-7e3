@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F5F1}
+a{color:#E4141E;text-decoration:none}
+a:hover{color:#B00F17;text-decoration:underline}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#F7F5F1;color:#14161A;font-family:'Work Sans',sans-serif;font-size:17px;line-height:1.6;display:flex;flex-direction:column;">
+
+  <header style="border-bottom:1px solid #DCD8D0;background:#F7F5F1;">
+    <div style="max-width:1080px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:44px;height:44px;background:#E4141E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'EB Garamond',serif;font-size:21px;">7·3</div>
+        <div style="display:flex;flex-direction:column;">
+          <span style="font-family:'EB Garamond',serif;font-size:23px;line-height:1.1;">Septième 3</span>
+          <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E7278;">École Alsacienne</span>
+        </div>
+      </div>
+      <nav style="display:flex;gap:28px;align-items:center;">
+        <a href="#journal" onClick="{{ goJournal }}" style="font-size:16px;color:{{ colJournal }};padding:10px 0;border-bottom:2px solid {{ barJournal }};text-decoration:none;">Journal</a>
+        <a href="#projets" onClick="{{ goProjets }}" style="font-size:16px;color:{{ colProjets }};padding:10px 0;border-bottom:2px solid {{ barProjets }};text-decoration:none;">Projets</a>
+        <a href="#galerie" onClick="{{ goGalerie }}" style="font-size:16px;color:{{ colGalerie }};padding:10px 0;border-bottom:2px solid {{ barGalerie }};text-decoration:none;">Galerie</a>
+        <a href="#contact" onClick="{{ goContact }}" style="font-size:16px;color:{{ colContact }};padding:10px 0;border-bottom:2px solid {{ barContact }};text-decoration:none;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ isJournal }}" hint-placeholder-val="{{ true }}">
+  <main style="flex:1;">
+    <section style="border-bottom:1px solid #DCD8D0;">
+      <div style="max-width:1080px;margin:0 auto;padding:64px 32px 56px;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;">
+        <div style="display:flex;flex-direction:column;gap:20px;max-width:680px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#E4141E;">Journal de classe — 12 juin</span>
+          <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:52px;line-height:1.05;letter-spacing:-.01em;text-wrap:balance;">Trois semaines pour bâtir un quartier</h1>
+          <p style="margin:0;font-size:19px;line-height:1.65;color:#41454C;text-wrap:pretty;">Nous avons construit une maquette du quartier de l'École, rue par rue. Il a fallu trois essais avant qu'elle tienne debout, et un vote pour décider où mettre le marché.</p>
+          <a href="#article" style="align-self:flex-start;background:#E4141E;color:#FFFFFF;padding:14px 28px;font-size:16px;font-weight:500;text-decoration:none;" style-hover="background:#B00F17;color:#FFFFFF;">Lire l'article</a>
+        </div>
+        <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 10px,#F3F0EA 10px 20px);border:1px solid #DCD8D0;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:24px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6E7278;text-align:center;line-height:1.8;">[ photo de la maquette ]<br>plan large, lumière du jour</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1080px;margin:0 auto;padding:56px 32px 72px;display:flex;flex-direction:column;gap:32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;border-bottom:1px solid #DCD8D0;padding-bottom:16px;">
+        <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:30px;">Derniers articles</h2>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8B8F95;">écrits par la classe</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+        <article style="display:flex;flex-direction:column;gap:12px;">
+          <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:3/2;"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B8F95;">4 juin</span>
+          <h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:22px;line-height:1.2;">Une semaine à écrire des haïkus</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#4C5157;">Dix-sept syllabes, pas une de plus. Nous en avons affiché trente dans le couloir.</p>
+        </article>
+        <article style="display:flex;flex-direction:column;gap:12px;">
+          <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:3/2;"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B8F95;">21 mai</span>
+          <h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:22px;line-height:1.2;">Le potager du fond de la cour</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#4C5157;">Nous avons semé des radis. La moitié n'a rien donné : nous expliquons pourquoi.</p>
+        </article>
+        <article style="display:flex;flex-direction:column;gap:12px;">
+          <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:3/2;"></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B8F95;">9 mai</span>
+          <h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:22px;line-height:1.2;">Notre visite au musée de la Monnaie</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#4C5157;">Comment fabrique-t-on une pièce ? Compte rendu en six étapes, dessins compris.</p>
+        </article>
+      </div>
+    </section>
+
+    <section style="background:#14161A;color:#F7F5F1;">
+      <div style="max-width:1080px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:3px solid #E4141E;padding-top:20px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E4141E;">01</span>
+          <h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:26px;">Confiance</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:rgba(247,245,241,.72);">On ose montrer un travail en cours. Une erreur affichée vaut mieux qu'une idée gardée pour soi.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:3px solid #E4141E;padding-top:20px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E4141E;">02</span>
+          <h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:26px;">Coopération</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:rgba(247,245,241,.72);">Chaque production porte le nom de la classe avant celui d'un élève. On signe ensemble.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:3px solid #E4141E;padding-top:20px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E4141E;">03</span>
+          <h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:26px;">Créativité</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:rgba(247,245,241,.72);">On a le droit d'essayer une idée bizarre, à condition de la mener jusqu'au bout.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isProjets }}" hint-placeholder-val="{{ false }}">
+  <main style="flex:1;max-width:1080px;margin:0 auto;padding:64px 32px 72px;display:flex;flex-direction:column;gap:48px;width:100%;box-sizing:border-box;">
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:680px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#E4141E;">Projets</span>
+      <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:46px;line-height:1.06;">Ce que nous fabriquons cette année</h1>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#41454C;text-wrap:pretty;">Trois grands projets, un par trimestre. Chacun se termine par quelque chose que l'on peut montrer : une maquette, un livre, une exposition.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#DCD8D0;">
+      <article style="background:#F7F5F1;display:grid;grid-template-columns:120px 1fr 240px;gap:32px;padding:32px 0;align-items:start;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8B8F95;">Trimestre 1</span>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:28px;line-height:1.15;">La maquette du quartier</h2>
+          <p style="margin:0;font-size:16px;line-height:1.65;color:#4C5157;max-width:520px;">Relevé des rues, plan à l'échelle, construction en carton. Six groupes, une seule maquette à la fin.</p>
+          <span style="font-size:14px;color:#6E7278;">Géographie · Mathématiques · Arts plastiques</span>
+        </div>
+        <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:3/2;"></div>
+      </article>
+      <article style="background:#F7F5F1;display:grid;grid-template-columns:120px 1fr 240px;gap:32px;padding:32px 0;align-items:start;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8B8F95;">Trimestre 2</span>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:28px;line-height:1.15;">Le livre des trente haïkus</h2>
+          <p style="margin:0;font-size:16px;line-height:1.65;color:#4C5157;max-width:520px;">Écriture, choix collectif, mise en page et reliure. Un exemplaire par famille, imprimé à l'École.</p>
+          <span style="font-size:14px;color:#6E7278;">Français · Arts plastiques</span>
+        </div>
+        <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:3/2;"></div>
+      </article>
+      <article style="background:#F7F5F1;display:grid;grid-template-columns:120px 1fr 240px;gap:32px;padding:32px 0;align-items:start;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8B8F95;">Trimestre 3</span>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:28px;line-height:1.15;">L'exposition du potager</h2>
+          <p style="margin:0;font-size:16px;line-height:1.65;color:#4C5157;max-width:520px;">Semis, mesures hebdomadaires, échecs expliqués. Exposition ouverte aux familles en juin.</p>
+          <span style="font-size:14px;color:#6E7278;">Sciences · Français</span>
+        </div>
+        <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:3/2;"></div>
+      </article>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isGalerie }}" hint-placeholder-val="{{ false }}">
+  <main style="flex:1;max-width:1080px;margin:0 auto;padding:64px 32px 72px;display:flex;flex-direction:column;gap:40px;width:100%;box-sizing:border-box;">
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:680px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#E4141E;">Galerie</span>
+      <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:46px;line-height:1.06;">Les mains, les outils, les travaux</h1>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#41454C;">Cadrage large, lumière naturelle, aucun filtre. Les visages ne sont publiés qu'avec l'accord des familles.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;grid-column:span 2;aspect-ratio:2/1;display:flex;align-items:flex-end;padding:16px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6E7278;">[ atelier maquette — plan large ]</span></div>
+      <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:1/1;display:flex;align-items:flex-end;padding:16px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6E7278;">[ mains + ciseaux ]</span></div>
+      <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:1/1;display:flex;align-items:flex-end;padding:16px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6E7278;">[ radis mesurés ]</span></div>
+      <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:1/1;display:flex;align-items:flex-end;padding:16px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6E7278;">[ haïkus au mur ]</span></div>
+      <div style="background:repeating-linear-gradient(135deg,#EDEAE3 0 8px,#F3F0EA 8px 16px);border:1px solid #DCD8D0;aspect-ratio:1/1;display:flex;align-items:flex-end;padding:16px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6E7278;">[ reliure du livre ]</span></div>
+      <div style="background:#E4141E;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;"><span style="font-family:'EB Garamond',serif;font-size:44px;color:#FFFFFF;">7·3</span></div>
+      <div style="background:repeating-linear-gradient(45deg,#E4141E 0 10px,#F7F5F1 10px 20px);border:1px solid #DCD8D0;grid-column:span 2;aspect-ratio:2/1;"></div>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <main style="flex:1;max-width:1080px;margin:0 auto;padding:64px 32px 72px;display:grid;grid-template-columns:1fr 1fr;gap:56px;width:100%;box-sizing:border-box;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:520px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#E4141E;">Contact</span>
+      <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:500;font-size:46px;line-height:1.06;">Écrire à la classe</h1>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#41454C;">Les messages sont lus en classe le vendredi. Nous répondons à tous, même aux plus courts.</p>
+      <div style="border-top:1px solid #DCD8D0;padding-top:20px;display:flex;flex-direction:column;gap:6px;">
+        <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8B8F95;">Maîtresse</span>
+        <span style="font-family:'EB Garamond',serif;font-size:24px;">Isabelle Mosnier</span>
+        <a href="mailto:classe-7e3@yopmail.com" style="font-size:16px;">classe-7e3@yopmail.com</a>
+      </div>
+      <div style="border-top:1px solid #DCD8D0;padding-top:20px;display:flex;flex-direction:column;gap:6px;">
+        <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8B8F95;">Adresse</span>
+        <span style="font-size:16px;line-height:1.6;color:#4C5157;">École Alsacienne<br>109 rue Notre-Dame-des-Champs<br>75006 Paris</span>
+      </div>
+    </div>
+    <form onSubmit="{{ onSubmit }}" style="background:#FFFFFF;border:1px solid #E4E0D8;padding:32px;display:flex;flex-direction:column;gap:20px;">
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:#4C5157;">Votre nom
+        <input type="text" placeholder="Prénom et nom" style="font-family:'Work Sans',sans-serif;font-size:16px;padding:12px 14px;border:1px solid #DCD8D0;background:#F7F5F1;color:#14161A;min-height:44px;box-sizing:border-box;">
+      </label>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:#4C5157;">Votre adresse électronique
+        <input type="email" placeholder="nom@exemple.fr" style="font-family:'Work Sans',sans-serif;font-size:16px;padding:12px 14px;border:1px solid #DCD8D0;background:#F7F5F1;color:#14161A;min-height:44px;box-sizing:border-box;">
+      </label>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:#4C5157;">Votre message
+        <textarea rows="5" placeholder="Écrivez-nous quelques lignes." style="font-family:'Work Sans',sans-serif;font-size:16px;padding:12px 14px;border:1px solid #DCD8D0;background:#F7F5F1;color:#14161A;resize:vertical;box-sizing:border-box;"></textarea>
+      </label>
+      <button type="submit" style="align-self:flex-start;background:#E4141E;color:#FFFFFF;border:0;padding:14px 28px;font-family:'Work Sans',sans-serif;font-size:16px;font-weight:500;cursor:pointer;min-height:44px;" style-hover="background:#B00F17;">Envoyer le message</button>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E4141E;">Message reçu — nous le lisons vendredi.</span>
+      </sc-if>
+    </form>
+  </main>
+  </sc-if>
+
+  <footer style="background:#14161A;color:rgba(247,245,241,.72);">
+    <div style="max-width:1080px;margin:0 auto;padding:48px 32px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <span style="font-family:'EB Garamond',serif;font-size:22px;color:#F7F5F1;">« On essaie, on recommence, on montre. »</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;">Classe de 7<sup>e</sup>3 — année 2026-2027</span>
+      </div>
+      <div style="background:#FFFFFF;padding:14px 18px;">
+        <img src="assets/logo-ecole-alsacienne.png" alt="École Alsacienne" style="width:200px;height:auto;display:block;">
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E4141E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#E4141E&quot;,&quot;#14161A&quot;,&quot;#B00F17&quot;],&quot;section&quot;:&quot;Charte&quot;}}">
+class Component extends DCLogic {
+  state = { page: "journal", sent: false };
+  go(p) { return (e) => { if (e) e.preventDefault(); this.setState({ page: p }); }; }
+  renderVals() {
+    const p = this.state.page;
+    const accent = this.props.accent ?? "#E4141E";
+    const col = (k) => (p === k ? "#14161A" : "#4C5157");
+    const bar = (k) => (p === k ? accent : "transparent");
+    return {
+      isJournal: p === "journal", isProjets: p === "projets",
+      isGalerie: p === "galerie", isContact: p === "contact",
+      goJournal: this.go("journal"), goProjets: this.go("projets"),
+      goGalerie: this.go("galerie"), goContact: this.go("contact"),
+      colJournal: col("journal"), colProjets: col("projets"),
+      colGalerie: col("galerie"), colContact: col("contact"),
+      barJournal: bar("journal"), barProjets: bar("projets"),
+      barGalerie: bar("galerie"), barContact: bar("contact"),
+      sent: this.state.sent,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
