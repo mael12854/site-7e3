@@ -1,25 +1,38 @@
-# CODING AGENTS: READ THIS FIRST
+# Site 7e3
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Le site de la classe de 7<sup>e</sup>3 (École Alsacienne, maîtresse Isabelle Mosnier) : Journal, Projets, Galerie, Contact.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Site statique HTML/CSS/JS, sans étape de build — prêt à déployer tel quel (Vercel, GitHub Pages, Netlify...).
 
-## What you should do — IMPORTANT
+## Structure
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+```
+index.html       Journal (page d'accueil)
+projets.html      Projets
+galerie.html      Galerie
+contact.html      Contact
+css/style.css     Styles partagés (variables de couleur, typographie, mise en page)
+js/main.js        Confirmation d'envoi du formulaire de contact
+assets/           Logo de l'École Alsacienne
+favicon.svg       Monogramme 7·3
+```
 
-**Read `project/Charte 7e3.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Charte graphique
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+Rouge École `#E4141E`, encre `#14161A`, craie `#F7F5F1`, ardoise `#6E7278`.
+Titres en EB Garamond, textes en Work Sans, mentions en IBM Plex Mono.
 
-## About the design files
+Voir `project/Charte 7e3.dc.html` pour la charte complète (logo, motifs, règles d'usage, papeterie).
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+## À faire avant publication
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+- Remplacer les photos de substitution (zones rayées) par de vraies photos de la classe.
+- Le formulaire de contact affiche une confirmation mais n'envoie rien : brancher un service d'envoi (ex. Formspree, une fonction serverless) ou passer par un `mailto:` si aucun backend n'est prévu.
 
-## Bundle contents
+## Origine
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Brand Guidelines classe 7è3` project files (HTML prototypes, assets, components)
+Ce site suit la charte graphique de la classe (`project/Charte 7e3.dc.html`, maquettée avec Claude Design — voir `chats/` pour la transcription de la conception). La mise en page et le contenu de ce site sont conçus indépendamment de la maquette `project/Site 7e3.dc.html` : seules les règles de la charte (couleurs, typographie, logo, motifs, ton, structure en 4 rubriques) sont reprises.
+
+## Déploiement
+
+Aucune étape de build n'est nécessaire : c'est un site statique. Sur Vercel, importer ce dépôt tel quel (aucune configuration de framework requise).
