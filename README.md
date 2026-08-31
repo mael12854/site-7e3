@@ -1,4 +1,6 @@
-# Site 7e3
+# site-7e3
+
+Voici le site de la classe des 7e3.
 
 Le site de la classe de 7<sup>e</sup>3 (École Alsacienne, maîtresse Isabelle Mosnier) : Journal, Projets, Galerie, Contact.
 
