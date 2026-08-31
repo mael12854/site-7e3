@@ -470,10 +470,6 @@ main { flex: 1; }
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-.site-footer .logo-plate {
-  background: #FFFFFF;
-  padding: 14px 18px;
-}
 .site-footer .logo-plate img {
   width: 200px;
   height: auto;
