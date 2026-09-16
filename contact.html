@@ -59,19 +59,38 @@
         </div>
       </div>
 
-      <form class="contact-form" id="contact-form" data-mailto="classe-7e3@yopmail.com">
-        <label for="nom">Votre nom
-          <input type="text" id="nom" name="nom" placeholder="Prénom et nom" required>
-        </label>
-        <label for="email">Votre adresse électronique
-          <input type="email" id="email" name="email" placeholder="nom@exemple.fr" required>
-        </label>
-        <label for="message">Votre message
-          <textarea id="message" name="message" rows="5" placeholder="Écrivez-nous quelques lignes." required></textarea>
-        </label>
-        <button type="submit" class="btn">Envoyer le message</button>
-        <span class="confirmation">Votre logiciel de messagerie va s'ouvrir avec le message prêt à envoyer.</span>
-      </form>
+      <div class="contact-column">
+        <form class="contact-form" id="contact-form" data-mailto="classe-7e3@yopmail.com">
+          <label for="nom">Votre nom
+            <input type="text" id="nom" name="nom" placeholder="Prénom et nom" required>
+          </label>
+          <label for="email">Votre adresse électronique
+            <input type="email" id="email" name="email" placeholder="nom@exemple.fr" required>
+          </label>
+          <label for="message">Votre message
+            <textarea id="message" name="message" rows="5" placeholder="Écrivez-nous quelques lignes." required></textarea>
+          </label>
+          <button type="submit" class="btn">Envoyer le message</button>
+          <span class="confirmation">Votre logiciel de messagerie va s'ouvrir avec le message prêt à envoyer.</span>
+        </form>
+
+        <form class="contact-form" id="review-form" data-mailto="classe-7e3@yopmail.com">
+          <h2 class="review-title">Laissez un avis</h2>
+          <fieldset class="star-rating">
+            <legend>Votre note</legend>
+            <input type="radio" id="etoile-5" name="note" value="5" required><label for="etoile-5" title="5 étoiles">★</label>
+            <input type="radio" id="etoile-4" name="note" value="4" required><label for="etoile-4" title="4 étoiles">★</label>
+            <input type="radio" id="etoile-3" name="note" value="3" required><label for="etoile-3" title="3 étoiles">★</label>
+            <input type="radio" id="etoile-2" name="note" value="2" required><label for="etoile-2" title="2 étoiles">★</label>
+            <input type="radio" id="etoile-1" name="note" value="1" required><label for="etoile-1" title="1 étoile">★</label>
+          </fieldset>
+          <label for="avis-commentaire">Votre commentaire
+            <textarea id="avis-commentaire" name="commentaire" rows="4" placeholder="Qu'avez-vous pensé du site ?"></textarea>
+          </label>
+          <button type="submit" class="btn">Envoyer l'avis</button>
+          <span class="confirmation">Votre logiciel de messagerie va s'ouvrir avec l'avis prêt à envoyer.</span>
+        </form>
+      </div>
     </div>
   </div>
 </main>

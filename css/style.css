@@ -431,6 +431,12 @@ main { flex: 1; }
   color: var(--texte-secondaire);
 }
 
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .contact-form {
   background: #FFFFFF;
   border: 1px solid var(--bordure-carte);
@@ -438,6 +444,50 @@ main { flex: 1; }
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.review-title {
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.star-rating {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.star-rating legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.star-rating input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.star-rating label {
+  font-size: 32px;
+  line-height: 1;
+  color: var(--bordure);
+  cursor: pointer;
+}
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: var(--rouge);
+}
+.star-rating input:focus-visible + label {
+  outline: 2px solid var(--rouge);
+  outline-offset: 2px;
 }
 .contact-form label {
   display: flex;
