@@ -142,10 +142,36 @@ a:hover {
   color: var(--ardoise);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
 .main-nav {
   display: flex;
   gap: 28px;
   align-items: center;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--rouge);
+  border: 1px solid var(--rouge);
+  padding: 0 16px;
+  min-height: 40px;
+  white-space: nowrap;
+}
+.external-link:hover {
+  background: var(--rouge);
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 .main-nav a {
@@ -484,6 +510,7 @@ main { flex: 1; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .main-nav { gap: 18px; }
+  .header-actions { gap: 16px; }
   .page-intro h1 { font-size: 36px; }
 }
 
